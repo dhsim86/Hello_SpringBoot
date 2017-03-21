@@ -1,4 +1,4 @@
-spring:
-  mvc.view:
-    prefix: /WEB-INF/jsp/
-    suffix: .jsp
+my:
+  server:
+    - dev.bar.com
+    - foo.bar.com
