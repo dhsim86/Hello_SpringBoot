@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.nhnent.hellospringboot.Sender;
 import com.nhnent.hellospringboot.dao.UserRepository;
 import com.nhnent.hellospringboot.entity.User;
 
@@ -23,11 +24,21 @@ public class HelloController {
     @Autowired
     UserRepository userRepository;
     
+    @Autowired
+    private Sender sender;
+    
     @RequestMapping("/hello")
     public String index(Model model) {
         
        model.addAttribute("name", "Spring Blog");
        return "hello";
+    }
+    
+    @RequestMapping("/kakfaTest/{value}")
+    public void kafkaTest(@PathVariable String value) {
+        
+        sender.sendMessage("helloworld.t", value);
+        
     }
     
     @GetMapping("/member/nocache/{name}")
