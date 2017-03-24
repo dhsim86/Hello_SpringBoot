@@ -6,7 +6,6 @@
 	<groupId>com.nhnent.hellospringboot</groupId>
 	<artifactId>hellospringboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 
 	<name>Hello_SpringBoot</name>
 	<description>web project for Spring Boot</description>
@@ -124,7 +123,21 @@
 		<dependency>
 			 <groupId>org.springframework.kafka</groupId>
 		    <artifactId>spring-kafka</artifactId>
-		    <!-- <version></version> -->
+		</dependency>
+		
+		<dependency>
+			 <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-jersey</artifactId>
+		</dependency>
+		
+		<dependency>
+			 <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
+		<dependency>
+			 <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-remote-shell</artifactId>
 		</dependency>
 
 	</dependencies>
