@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nhnent.hellospringboot.dao.HelloDao;
@@ -36,7 +37,7 @@ public class HelloRestController {
         return helloData;
     }
     
-    @RequestMapping("/list")
+    @RequestMapping(path ="/list", method = RequestMethod.GET)
     public List<Hello> list(Model model) {
         
         List<Hello> helloList = helloDao.findAll();
